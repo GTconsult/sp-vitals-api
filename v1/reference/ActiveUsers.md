@@ -37,6 +37,7 @@ URL: **[https://www.spvitals.com/powerbi/v1/aggregate/user](https://www.spvitals
 | 400 Bad Request | One of the parameters data type is incorrect. |
 | 401 Unauthorized | Customer code does not exist or has been revoked. |
 | 404 Not Found | A parameter is missing or mistyped. |
+| 500 Internal Server Error | An unexpected server error. |
 
 ### Example Request:
 
