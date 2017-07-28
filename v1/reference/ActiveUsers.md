@@ -9,7 +9,7 @@ URL: **[https://www.spvitals.com/powerbi/v1/aggregate/user](https://www.spvitals
 | False | skip | INTEGER | Number of records to skip. |
 | False | orderByCount | BOOLEAN | If this is true, then records will be sorted by number of hits. |
 | False | orderDescending | BOOLEAN | If this is true, then records will be sorted by the largest value first. |
-| False | fromDate | DATETIME | Records from this date until today will be returned. The default is from midnight today until midnight tomorrow. |
+| False | fromDate | DATETIME | Records from this date until today will be returned. The default is from midnight today until now. |
 
 ### Success Response: 200 OK
 
