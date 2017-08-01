@@ -5,7 +5,7 @@ URL: **[https://www.spvitals.com/powerbi/v1/aggregate/visited](https://www.spvit
 | **Required** | **Parameter** | **Type** | **Description** |
 | --- | --- | --- | --- |
 | True | customerCode | GUID | This is your unique key. |
-| False | fromDate | DATETIME | Records from this date until toDate will be returned. The default is from midnight today until now. |
+| False | fromDate | DATETIME | Records from this date until toDate will be returned. The default is from midnight today. |
 | False | toDate | DATETIME | Records in the range of fromDate until this date is returned. The default is now. |
 | False | top | INTEGER | Number of records to return. |
 | False | skip | INTEGER | Number of records to skip. |
