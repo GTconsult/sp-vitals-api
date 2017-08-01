@@ -1,6 +1,6 @@
 Title: **Documents Per Site**<br />
 Method: **GET**<br />
-URL: **[https://www.spvitals.com/powerbi/v1/aggregate/documentspersite](https://www.spvitals.com/powerbi/v1/aggregate/documentspersite)**<br />
+URL: **[https://www.spvitals.com/powerbi/v1/aggregate/documentsPerSite](https://www.spvitals.com/powerbi/v1/aggregate/documentsPerSite)**<br />
 
 | **Required** | **Parameter** | **Type** | **Description** |
 | --- | --- | --- | --- |
