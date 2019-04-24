@@ -47,13 +47,26 @@ X-SPVITALS-POWERBI-KEY | GUID | PowerBI API key.
 | 404 Not Found | A parameter is missing or mistyped. |
 | 500 Internal Server Error | An unexpected server error. |
 
+### Example CURL Request:
+
+```curl
+curl -X GET \
+  'https://www.spvitals.com/powerbi/v1/aggregate/documentsPerSite?fromDate=2019-04-24&filter=&sites=&skip=0&top=10' \
+  -H 'X-SPVITALS-CUSTOMER: 00000000-0000-0000-0000-000000000000' \
+  -H 'X-SPVITALS-POWERBI-KEY: 00000000-0000-0000-0000-000000000000'
+```
+
 ### Example Request:
 
 ```javascript
 $.ajax({
-  async: true,
-  crossDomain: true,
-  url: "https://www.spvitals.com/powerbi/v1/aggregate/documentsPerSite?customerCode=00000000-0000-0000-0000-000000000000&fromDate=2017-07-26&filter&sites&skip=&top=",
-  method: "GET"
+  "async": true,
+  "crossDomain": true,
+  "url": "https://www.spvitals.com/powerbi/v1/aggregate/documentsPerSite?fromDate=2019-04-24&filter=&sites=&skip=0&top=10",
+  "method": "GET",
+  "headers": {
+    "X-SPVITALS-CUSTOMER": "00000000-0000-0000-0000-000000000000",
+    "X-SPVITALS-POWERBI-KEY": "00000000-0000-0000-0000-000000000000"
+  }
 });
 ```
