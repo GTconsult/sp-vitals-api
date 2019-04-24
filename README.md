@@ -62,6 +62,7 @@ audit | A combination report of the trend report including the summary report pe
 ### Authentication
 Generate an API key through the SharePoint Vitals dashboard and include it with your existing license key in the request header.
 Navigate to https://www.spvitals.com/PowerBI to generate an API key.
+
 Key | Value
 -|-
 X-SPVITALS-CUSTOMER | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
