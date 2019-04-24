@@ -89,7 +89,7 @@ orderDescending | BOOLEAN | Sort records by the largest value first.
 
 ## Example Responses
 
-+ __Summary__ Report Response 200 (application/json)
++ __Summary Report__ Response 200 (application/json)
 
         {
             "value": [
@@ -114,7 +114,7 @@ orderDescending | BOOLEAN | Sort records by the largest value first.
             ]
         }
 
-+ __Trend__ Report Response 200 (application/json)
++ __Trend Report__ Response 200 (application/json)
 
         {
             "value": [
@@ -139,7 +139,7 @@ orderDescending | BOOLEAN | Sort records by the largest value first.
             ]
         }
 
-+ __Audit__ Report Response 200 (application/json)
++ __Audit Report__ Response 200 (application/json)
 
         {
             "value": [
