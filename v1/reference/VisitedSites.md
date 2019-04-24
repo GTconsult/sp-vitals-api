@@ -1,10 +1,23 @@
-Title: **Visited Sites**<br />
+# Visited Sites<br />
+Version: **1.0**<br />
 Method: **GET**<br />
 URL: **[https://www.spvitals.com/powerbi/v1/aggregate/visited](https://www.spvitals.com/powerbi/v1/aggregate/visited)**<br />
 
+## API Key
+
+Your API key can be obtained by going to [https://www.spvitals.com/PowerBi](https://www.spvitals.com/PowerBi) and generating a key.
+
+## Headers
+
+Key | Value | Description
+-|-|-
+X-SPVITALS-CUSTOMER | GUID | This is your unique licence key.
+X-SPVITALS-POWERBI-KEY | GUID | PowerBI API key.
+
+## Parameters
+
 | **Required** | **Parameter** | **Type** | **Description** |
 | --- | --- | --- | --- |
-| True | customerCode | GUID | This is your unique key. |
 | False | fromDate | DATETIME | Records from this date until toDate will be returned. The default is from midnight today. |
 | False | toDate | DATETIME | Records in the range of fromDate until this date is returned. The default is now. |
 | False | top | INTEGER | Number of records to return. |

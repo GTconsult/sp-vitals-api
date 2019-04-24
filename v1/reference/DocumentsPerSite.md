@@ -1,15 +1,28 @@
-Title: **Documents Per Site**<br />
+# Documents Per Site<br />
+Version: **1.0**<br />
 Method: **GET**<br />
 URL: **[https://www.spvitals.com/powerbi/v1/aggregate/documentsPerSite](https://www.spvitals.com/powerbi/v1/aggregate/documentsPerSite)**<br />
 
+## API Key
+
+Your API key can be obtained by going to [https://www.spvitals.com/PowerBi](https://www.spvitals.com/PowerBi) and generating a key.
+
+## Headers
+
+Key | Value | Description
+-|-|-
+X-SPVITALS-CUSTOMER | GUID | This is your unique licence key.
+X-SPVITALS-POWERBI-KEY | GUID | PowerBI API key.
+
+## Parameters
+
 | **Required** | **Parameter** | **Type** | **Description** |
 | --- | --- | --- | --- |
-| True | customerCode | GUID | This is your unique key. |
 | False | fromDate | DATETIME | Records from this date until toDate will be returned. The default is from midnight today. |
 | False | filter | STRING | Return records where document names contains filter. |
 | False | sites | STRING | Specify which sites to return with. |
-| False | skip | INTEGER | Number of records to skip. |
 | False | top | INTEGER | Number of records to return. |
+| False | skip | INTEGER | Number of records to skip. |
 
 ### Success Response: 200 OK
 
