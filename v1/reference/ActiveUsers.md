@@ -55,9 +55,9 @@ X-SPVITALS-POWERBI-KEY | GUID | PowerBI API key.
 ### Example CURL Request:
 
 ```curl
-curl -X GET 
-  'https://www.spvitals.com/powerbi/v1/aggregate/user?fromDate=2000-01-01&top=10&skip=0&orderByCount=true&orderDescending=true' 
-  -H 'X-SPVITALS-CUSTOMER: 00000000-0000-0000-0000-000000000000' 
+curl -X GET \
+  'https://www.spvitals.com/powerbi/v1/aggregate/user?fromDate=2000-01-01&top=10&skip=0&orderByCount=true&orderDescending=true' \
+  -H 'X-SPVITALS-CUSTOMER: 00000000-0000-0000-0000-000000000000' \
   -H 'X-SPVITALS-POWERBI-KEY: 00000000-0000-0000-0000-000000000000' 
 ```
 

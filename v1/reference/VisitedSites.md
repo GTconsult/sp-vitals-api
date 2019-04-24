@@ -47,17 +47,17 @@ X-SPVITALS-POWERBI-KEY | GUID | PowerBI API key.
 
 ### Example CURL Request:
 
-curl -X GET 
-  'https://www.spvitals.com/powerbi/v1/aggregate/visited?fromDate=&toDate=&sites=&skip=0&top=10' 
-  -H 'X-SPVITALS-CUSTOMER: 00000000-0000-0000-0000-000000000000' 
+```curl
+curl -X GET \
+  'https://www.spvitals.com/powerbi/v1/aggregate/visited?fromDate=&toDate=&sites=&skip=0&top=10' \
+  -H 'X-SPVITALS-CUSTOMER: 00000000-0000-0000-0000-000000000000' \
   -H 'X-SPVITALS-POWERBI-KEY: 00000000-0000-0000-0000-000000000000' 
+```
 
 ### Example AJAX Request:
 
 ```javascript
 $.ajax({
-  "async": true,
-  "crossDomain": true,
   "url": "https://www.spvitals.com/powerbi/v1/aggregate/visited?fromDate=&toDate=&sites=&skip=0&top=10",
   "method": "GET",
   "headers": {

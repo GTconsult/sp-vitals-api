@@ -60,8 +60,6 @@ curl -X GET \
 
 ```javascript
 $.ajax({
-  "async": true,
-  "crossDomain": true,
   "url": "https://www.spvitals.com/powerbi/v1/aggregate/documentsPerSite?fromDate=2019-04-24&filter=&sites=&skip=0&top=10",
   "method": "GET",
   "headers": {
