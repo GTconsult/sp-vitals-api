@@ -87,6 +87,28 @@ filter | TEXT | Some reports offer filtering specific to the report. For example
 orderByCount | BOOLEAN | Sort the records by their count value. Otherwise sort by page load time.
 orderDescending | BOOLEAN | Sort records by the largest value first.
 
+## Example CURL Request
+```
+curl -X GET \
+  'https://www.spvitals.com/api/v2/sharepoint/trend/userspersite?top=25&skip=0&fromDate=2019-01-01&toDate=2019-01-31&users=&sites=&filter=&orderByCount=true&orderDescending=true' \
+  -H 'X-SPVITALS-CUSTOMER: 00000000-0000-0000-0000-000000000000' \
+  -H 'X-SPVITALS-POWERBI-KEY: 00000000-0000-0000-0000-000000000000' \
+```
+
+## Example JavaScript (ajax) Request
+```
+$.ajax({
+  "async": true,
+  "crossDomain": true,
+  "url": "https://www.spvitals.com/api/v2/sharepoint/trend/userspersite?top=25&skip=0&fromDate=2019-01-01&toDate=2019-01-31&users=&sites=&filter=&orderByCount=true&orderDescending=true",
+  "method": "GET",
+  "headers": {
+    "X-SPVITALS-CUSTOMER": "00000000-0000-0000-0000-000000000000",
+    "X-SPVITALS-POWERBI-KEY": "00000000-0000-0000-0000-000000000000"
+  }
+});
+```
+
 ## Example Responses
 
 + __Summary Report__ Response 200 (application/json)
