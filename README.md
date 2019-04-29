@@ -7,39 +7,46 @@ For more information about the client app that captures analytics data, visit [w
 
 The dashboard for seeing the aggregated data and scheduling reports can be found here: [www.spvitals.com](https://www.spvitals.com)
 
-<hr />
+---
 
 ## Version 1.0
 
 This version of the API has had an upgrade to the security layer. Please see the necessary guides to find the changes.
 
-**Executive Summary:** 
+**Executive Summary:**
 
 Instead of sending your customer code (license key) through the URL parameters, this detail must go through the headers. You will also need to include your API key. Navigate to https://www.spvitals.com/PowerBI to generate this API key.
 
-<hr />
+---
 
 ## Version 2.0
 
 ### Overview
+
+Version 2.0 of the API now has all the reports that you would normally find on the dashboard and more.
+
 Get trend reports or summaries over a selected date range or get a live-stream for a relative period.
 
-### Error Codes
-Status Code | Description
--|-
-401 | Unauthorised access if there is a problem verifying your access keys. 
-400 | Problem exists with a parameter. 
-500 | Exceptions occuring with the API itself.
+### Getting Started
+
+To integrate with SharePoint Vitals API, you will first need to understand how the URL and parameters work. 
+
+
+The URL made up of components:
+**HOST** /api/v2/sharepoint / **TYPE** / **REPORT** ? **PARAMETERS**
 
 ### Special Parameters
-#### {type} 
+
+#### {TYPE}
+
 Name | Description
 -|-
-summary | Total number of views per resource for the selected period.
-trend | A report showing the number of records as well as the number of total views per day over the selected period.
+summary | The data from this type of report is the same as you would see on the dashboard. It lists each record and it's total number over the period selected.
+trend | A trend report shows the number of records as well as the number of total views per day over the selected period.
 audit | A combination report of the trend report including the summary report per day.
 
-#### {report}
+#### {REPORT}
+
 - activeusers
 - pagehits
 - visitedsites
@@ -58,22 +65,11 @@ audit | A combination report of the trend report including the summary report pe
 - siteaccesshistory
 - heatmap
 
+#### {PARAMETERS}
 
-### Authentication
-Generate an API key through the SharePoint Vitals dashboard and include it with your existing license key in the request header.
-Navigate to https://www.spvitals.com/PowerBI to generate an API key.
+**Please Note:** All the parameters are required, even if their value is empty.
 
-Key | Value
--|-
-X-SPVITALS-CUSTOMER | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-X-SPVITALS-POWERBI-KEY | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-
-## Absolute Period
-Enter a custom date range between 2 points in time.
-
-### api/v2/sharepoint/{type}/{report}?parameters [GET]
-
-- Request Parameters
+##### Absolute Period - from date to date
 
 Name | Value | Description
 -|-|-
@@ -87,8 +83,27 @@ filter | TEXT | Some reports offer filtering specific to the report. For example
 orderByCount | BOOLEAN | Sort the records by their count value. Otherwise sort by page load time.
 orderDescending | BOOLEAN | Sort records by the largest value first.
 
+#### {PARAMETERS}
+
+##### Relative Period - for some time before today
+
+Name | Value | Description
+-|-|-
+top | NUMBER | Return a limited number of records. For example: top 15 active users. The default is (0) to fetch all records without limit.
+period | TEXT | Name of period to draw reports from. Available options include: **day**, **week**, **month** or **year**
+interval | NUMBER | The number of periods to go back, eg. 2 weeks or 3 months
+
+### Error Codes
+
+Status Code | Description
+-|-
+401 | Unauthorised access if there is a problem verifying your access keys. 
+400 | Problem exists with a parameter. 
+500 | Exceptions occuring with the API itself.
+
 ## Example CURL Request
-```
+
+```curl
 curl -X GET \
   'https://www.spvitals.com/api/v2/sharepoint/trend/userspersite?top=25&skip=0&fromDate=2019-01-01&toDate=2019-01-31&users=&sites=&filter=&orderByCount=true&orderDescending=true' \
   -H 'X-SPVITALS-CUSTOMER: 00000000-0000-0000-0000-000000000000' \
@@ -96,7 +111,8 @@ curl -X GET \
 ```
 
 ## Example JavaScript (ajax) Request
-```
+
+```javascript
 $.ajax({
   "async": true,
   "crossDomain": true,
@@ -111,7 +127,7 @@ $.ajax({
 
 ## Example Responses
 
-+ __Summary Report__ Response 200 (application/json)
+- __Summary Report__ Response 200 (application/json)
 
         {
             "value": [
@@ -136,7 +152,7 @@ $.ajax({
             ]
         }
 
-+ __Trend Report__ Response 200 (application/json)
+- __Trend Report__ Response 200 (application/json)
 
         {
             "value": [
@@ -161,7 +177,7 @@ $.ajax({
             ]
         }
 
-+ __Audit Report__ Response 200 (application/json)
+- __Audit Report__ Response 200 (application/json)
 
         {
             "value": [
